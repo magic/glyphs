@@ -1,0 +1,47 @@
+{
+  "name": "@magic/glyphs",
+  "version": "0.0.1",
+  "description": "generate iconfont files (ttf,woff2,woff,eot,svg), @magic/css file and @magic-modules using that font, all from svg files.",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/magic/glyphs"
+  },
+  "scripts": {
+    "start": "t",
+    "build": "src/bin/bin.js build --dir svg --out dist --name magic-icons --cssPrefix mi",
+    "format": "f -w",
+    "test": "t"
+  },
+  "bin": {
+    "magic-glyphs": "src/bin/bin.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "icons",
+    "font",
+    "iconfont",
+    "svg",
+    "scss",
+    "webpack",
+    "plugin"
+  ],
+  "main": "src/index.mjs",
+  "dependencies": {
+    "svg2ttf": "4.3.0",
+    "svgicons2svgfont": "jaeh/svgicons2svgfont",
+    "ttf2eot": "2.0.0",
+    "ttf2woff": "2.0.1",
+    "ttf2woff2-no-gyp": "2.0.5"
+  },
+  "devDependencies": {
+    "@magic/cli": "0.0.10",
+    "@magic/css": "0.7.8",
+    "@magic/fs": "0.0.1",
+    "@magic/log": "0.1.2",
+    "@magic/test": "0.1.25",
+    "@magic/types": "0.1.4"
+  }
+}

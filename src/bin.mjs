@@ -30,11 +30,11 @@ const args = {
       '--output': 'directory to output files to',
       '--name': 'font name',
       '--cssPrefix': 'css prefix for font',
-      '--webRoot':  "root URL, eg '/', '/dirname/'",
+      '--webRoot': 'root URL, eg "/", "/dirname/"',
       '--fontDir': 'directory to write font file to',
       '--cssDir': 'directory to write css file to',
       '--jsDir': 'directory to write js file to',
-      '--minimal': 'only output minimal files, no preview, no js.'
+      '--minimal': 'only output minimal files, no preview, no js.',
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-

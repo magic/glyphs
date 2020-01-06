@@ -26,13 +26,10 @@
   '.mi-check::before': {
     'content': '"\ea05"'
   },
-  '.mi-state-beinvited::before': {
+  '.mi-success::before': {
     'content': '"\ea06"'
   },
-  '.mi-success::before': {
-    'content': '"\ea07"'
-  },
   '.mi-warning::before': {
-    'content': '"\ea08"'
+    'content': '"\ea07"'
   }
 }

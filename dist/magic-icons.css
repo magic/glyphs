@@ -5,6 +5,5 @@
  .mi-camera::before { content: "\ea03"; }
  .mi-chat::before { content: "\ea04"; }
  .mi-check::before { content: "\ea05"; }
- .mi-state-beinvited::before { content: "\ea06"; }
- .mi-success::before { content: "\ea07"; }
- .mi-warning::before { content: "\ea08"; }
+ .mi-success::before { content: "\ea06"; }
+ .mi-warning::before { content: "\ea07"; }

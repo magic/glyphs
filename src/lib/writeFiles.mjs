@@ -47,7 +47,6 @@ export const writeFiles = async (result, options) => {
   }
 
   if (!noModules) {
-    console.log(dist.modules, result.modules)
     fileContents[dist.modules] = result.modules
   }
 

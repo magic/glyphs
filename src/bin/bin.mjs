@@ -12,10 +12,11 @@ const args = {
     ['--output', '--out', '-o'],
     ['--name', '-n'],
     ['--cssPrefix', '--prefix', '-p'],
-    '--webRoot',
-    '--fontDir',
-    '--cssDir',
-    '--jsDir',
+    ['--webRoot', '-w'],
+    ['--fontDir', '-f'],
+    ['--cssDir', '-c'],
+    ['--jsDir', '-j'],
+    ['--minimal', '--min', '-m'],
   ],
   commands: ['build'],
   help: {
@@ -33,6 +34,7 @@ const args = {
       '--fontDir': 'directory to write font file to',
       '--cssDir': 'directory to write css file to',
       '--jsDir': 'directory to write js file to',
+      '--minimal': 'only output minimal files, no preview, no js.'
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-

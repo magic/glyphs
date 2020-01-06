@@ -5,6 +5,7 @@ export default {
   fontDir: '',
   cssDir: '',
   jsDir: '',
+  minimal: false,
 
   ascent: undefined,
   centerHorizontally: true,

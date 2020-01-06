@@ -9,6 +9,7 @@ import {
   glyphs2css,
   glyphs2html,
   glyphs2js,
+  glyphs2module,
   hash,
   svgFont2otherFonts,
   writeFiles,
@@ -17,10 +18,7 @@ import {
 const cwd = process.cwd()
 
 export const build = async (options = {}) => {
-  options = {
-    ...defaultOptions,
-    ...options,
-  }
+  options = { ...defaultOptions, ...options }
 
   let { name, output, cssDir, jsDir, fontDir, webRoot } = options
 
@@ -30,8 +28,8 @@ export const build = async (options = {}) => {
     js: path.join(output, `${name}-lib.mjs`),
     magicCss: path.join(output, `${name}-style.mjs`),
     magicView: path.join(output, `${name}.mjs`),
+    modules: path.join(output, `${name}.mjs`),
   }
-
 
   let cssFileUrl = `${name}.css`
   if (cssDir) {
@@ -62,11 +60,17 @@ export const build = async (options = {}) => {
     const glyphs = await getGlyphs(files, options)
     const svg = await glyphs2svgFont(glyphs, options)
     const fonts = svgFont2otherFonts(svg, options)
+
     const fileMark = hash(svg).slice(0, 8)
 
     options.fileMark = fileMark
 
     const { css, magicCss } = await glyphs2css(glyphs, options)
+
+    const html = glyphs2html(glyphs, options)
+    const js = glyphs2js(glyphs)
+
+    const modules = glyphs2module(glyphs, options)
 
     const contents = {
       glyphs,
@@ -75,8 +79,9 @@ export const build = async (options = {}) => {
       fileMark,
       css,
       magicCss,
-      html: glyphs2html(glyphs, options),
-      js: glyphs2js(glyphs),
+      html,
+      js,
+      modules,
     }
 
     await writeFiles(contents, options)

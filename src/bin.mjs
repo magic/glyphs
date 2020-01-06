@@ -3,7 +3,7 @@
 import { cli } from '@magic/cli/src/index.mjs'
 import log from '@magic/log'
 
-import build from '../index.mjs'
+import build from './index.mjs'
 
 const args = {
   options: [
@@ -50,30 +50,21 @@ magic-glyphs --in ./src --out ./dist --name my-cool-font --cssPrefix mcf-
 const run = async () => {
   const res = cli(args)
 
-  const { options } = res
-
-  if (!options['--dir']) {
+  if (!res.args.dir) {
     log.error('--dir is required')
     process.exit()
   }
 
-  if (!options['--output']) {
+  if (!res.args.output) {
     log.error('--output is required')
     process.exit()
+  } else {
+    res.args.output = res.args.output[0]
   }
 
-  const opts = {}
-  Object.entries(options).forEach(([key, val]) => {
-    const k = key.substr(2)
+  res.args.name = res.args.name[0]
 
-    if (Array.isArray(val)) {
-      val = val[0]
-    }
-
-    opts[k] = val
-  })
-
-  build(opts)
+  build(res.args)
 }
 
 run()

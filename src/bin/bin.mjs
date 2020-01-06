@@ -12,6 +12,10 @@ const args = {
     ['--output', '--out', '-o'],
     ['--name', '-n'],
     ['--cssPrefix', '--prefix', '-p'],
+    '--webRoot',
+    '--fontDir',
+    '--cssDir',
+    '--jsDir',
   ],
   commands: ['build'],
   help: {
@@ -25,6 +29,10 @@ const args = {
       '--output': 'directory to output files to',
       '--name': 'font name',
       '--cssPrefix': 'css prefix for font',
+      '--webRoot':  "root URL, eg '/', '/dirname/'",
+      '--fontDir': 'directory to write font file to',
+      '--cssDir': 'directory to write css file to',
+      '--jsDir': 'directory to write js file to',
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-

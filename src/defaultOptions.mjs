@@ -1,0 +1,31 @@
+export default {
+  name: 'magic-icons',
+  cssPrefix: 'mi',
+  webRoot: '/',
+  fontDir: '',
+  cssDir: '',
+  jsDir: '',
+
+  ascent: undefined,
+  centerHorizontally: true,
+  descent: 0,
+  fixedWidth: false,
+  fontId: null,
+  formats: ['svg', 'ttf', 'eot', 'woff2', 'woff'],
+  formatsOptions: {
+    ttf: {
+      copyright: null,
+      ts: null,
+      version: null,
+    },
+  },
+  glyphTransformFn: null,
+  metadata: null,
+  metadataProvider: null,
+  fontHeight: 1000,
+  normalize: true,
+  prependUnicode: false,
+  round: 10e12,
+  startUnicode: 0xea01,
+  verbose: false,
+}

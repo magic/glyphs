@@ -9,12 +9,8 @@ export const glyphs2module = (glyphs, options) => {
     const name = cases.pascal(id)
     const unicode = g.metadata.unicode[0].charCodeAt(0).toString(16)
 
-    return `${name}: () => i({ class: '${cssPrefix}-${id}' }, '\\${unicode}')`
-  }).join(',\n  ')
+    return `export const ${name} = () => i({ class: '${cssPrefix}-${id}' }, '\\${unicode}')`
+  })
 
-  return `
-export const ${fontName} = {
-  ${moduleGlyphs}
-}\n
-`.trim()
+  return moduleGlyphs.join(',\n\n')
 }

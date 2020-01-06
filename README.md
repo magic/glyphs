@@ -1,10 +1,10 @@
 ## @magic/glyphs
 
-takes a directory of svgs
-and builds
+takes a directory of svgs and builds
 * iconfont files (ttf, woff2, woff, eot, svg),
 * a [@magic/css](https://github.com/magic/css) file,
 * a css file,
+* a file with a [@magic-module](https://magic-modules.github.io/) for each icon
 * and a html-preview.
 
 [![NPM version][npm-image]][npm-url]
@@ -13,7 +13,6 @@ and builds
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
-
 
 ## install
 ```bash
@@ -54,6 +53,11 @@ const options = {
   cssDir: '',          // sub directory to write css files to.
   jsDir: '',           // sub directory to write js files to.
   minimal: false,      // only output minimal files, no preview, no js.
+  noCss: false,        // do not generate css file
+  noMagicCss: false,   // do not generate magicCss.mjs file
+  noJs: false,         // do not generate javascript file
+  noPreview: false,    // do not generate preview
+  noModules: false,    // do not generate @magic-module file
 
   // default options for svg <> font generators
   ascent: undefined,

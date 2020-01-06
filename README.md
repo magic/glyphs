@@ -40,6 +40,8 @@ const options = {
   output: 'dist',      // the directory to write to
   webRoot: '/',        // web root of the resulting homepage
   fontDir: '',         // sub directory to write font files to.
+  cssDir: '',          // sub directory to write css files to.
+  jsDir: '',           // sub directory to write js files to.
 
   // default options for svg <> font generators
   ascent: undefined,

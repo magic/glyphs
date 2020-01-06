@@ -1,8 +1,19 @@
 ## @magic/glyphs
 
-builds iconfont files (ttf, woff2, woff, eot, svg),
-a @magic/css file,
-and a html-preview file for a directory of svgs.
+takes a directory of svgs
+and builds
+* iconfont files (ttf, woff2, woff, eot, svg),
+* a [@magic/css](https://github.com/magic/css) file,
+* a css file,
+* and a html-preview.
+
+[![NPM version][npm-image]][npm-url]
+[![Linux Build Status][travis-image]][travis-url]
+[![Windows Build Status][appveyor-image]][appveyor-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+
 
 ## install
 ```bash
@@ -83,3 +94,20 @@ const results = glyphs()
 
 ##### 0.0.1 - unreleased
 first release
+
+##### 0.0.2 - unreleased
+...
+
+
+[npm-image]: https://img.shields.io/npm/v/@magic/glyphs.svg
+[npm-url]: https://www.npmjs.com/package/@magic/glyphs
+[travis-image]: https://img.shields.io/travis/com/magic/glyphs/master
+[travis-url]: https://travis-ci.com/magic/glyphs
+[appveyor-image]: https://img.shields.io/appveyor/ci/magic/glyphs/master.svg
+[appveyor-url]: https://ci.appveyor.com/project/magic/glyphs/branch/master
+[coveralls-image]: https://coveralls.io/repos/github/magic/glyphs/badge.svg
+[coveralls-url]: https://coveralls.io/github/magic/glyphs
+[greenkeeper-image]: https://badges.greenkeeper.io/magic/glyphs.svg
+[greenkeeper-url]: https://badges.greenkeeper.io/magic/glyphs.svg
+[snyk-image]: https://snyk.io/test/github/magic/glyphs/badge.svg
+[snyk-url]: https://snyk.io/test/github/magic/glyphs

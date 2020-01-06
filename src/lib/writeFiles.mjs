@@ -20,19 +20,41 @@ export const writeFiles = async (result, options) => {
     output,
     formats,
     dist,
+    minimal,
+    noCss,
+    noMagicCss,
+    noJs,
+    noPreview,
+    noModules,
   } = options
 
-  const fileContents = {
-    [dist.css]: result.css,
-    [dist.magicCss]: result.magicCss,
-    [dist.js]: result.js,
-    [dist.html]: result.html,
+  const fileContents = {}
+
+  if (!noMagicCss) {
+    fileContents[dist.magicCss] = result.magicCss
+  }
+
+  if (!minimal) {
+    if (!noCss) {
+      fileContents[dist.css] = result.css
+    }
+    if (!noJs) {
+      fileContents[dist.js] = result.js
+    }
+    if (!noPreview) {
+      fileContents[dist.html] = result.html
+    }
+  }
+
+  if (!noModules) {
+    console.log(dist.modules, result.modules)
+    fileContents[dist.modules] = result.modules
   }
 
   options.formats
     .map(format => [format, result.fonts[format]])
     .map(([format, data]) => {
-      const destFilename = path.resolve(output, `${name}.${format}`)
+      const destFilename = path.resolve(output, fontDir, `${name}.${format}`)
       fileContents[destFilename] = data
     })
 

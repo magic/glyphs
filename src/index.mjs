@@ -31,17 +31,24 @@ export const build = async (options = {}) => {
     modules: path.join(output, `${name}.mjs`),
   }
 
+  if (!webRoot.endsWith('/')) {
+    webRoot += '/'
+  }
+  if (!webRoot.startsWith('/')) {
+    webRoot = `/${webRoot}`
+  }
+
   let cssFileUrl = `${name}.css`
   if (cssDir) {
-    cssFileUrl = `${cssDir}/${cssFileUrl}`
+    cssFileUrl = `${cssDir}${cssFileUrl}`
   }
-  cssFileUrl = `${webRoot}/${cssFileUrl}`
+  cssFileUrl = `${webRoot}${cssFileUrl}`
 
   let jsFileUrl = `${name}.js`
   if (jsDir) {
-    jsFileUrl = `${jsDir}/${jsFileUrl}`
+    jsFileUrl = `${jsDir}${jsFileUrl}`
   }
-  jsFileUrl = `${webRoot}/${jsFileUrl}`
+  jsFileUrl = `${webRoot}${jsFileUrl}`
 
   let fontFileUrl = webRoot
   if (fontDir) {
@@ -50,7 +57,7 @@ export const build = async (options = {}) => {
 
   options.urls = {
     css: cssFileUrl,
-    html: `${webRoot}/${name}-preview.html`,
+    html: `${webRoot}${name}-preview.html`,
     js: jsFileUrl,
     font: fontFileUrl,
   }

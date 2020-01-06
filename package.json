@@ -10,7 +10,7 @@
   "scripts": {
     "start": "t",
     "build": "src/bin.mjs build --dir svg --out dist --name magic-icons --cssPrefix mi",
-    "format": "f -w",
+    "format": "f -w --exclude dist docs",
     "test": "t"
   },
   "bin": {

@@ -1,6 +1,8 @@
 import path from 'path'
 import fs from '@magic/fs'
 
+const cwd = process.cwd()
+
 export const writeFile = async ([file, data]) => {
   const dir = path.dirname(file)
 
@@ -54,12 +56,20 @@ export const writeFiles = async (result, options) => {
   options.formats
     .map(format => [format, result.fonts[format]])
     .map(([format, data]) => {
-      const destFilename = path.resolve(output, fontDir, `${name}.${format}`)
+      const destFilename = path.join(fontDir, `${name}.${format}`)
       fileContents[destFilename] = data
     })
 
   if (!noWrite) {
-    await Promise.all(Object.entries(fileContents).map(writeFile))
+    const fixedPathFileContents = {}
+    Object.entries(fileContents).forEach(([k, v]) => {
+      if (!k.startsWith(cwd)) {
+        k = path.join(cwd, output, k)
+      }
+      fixedPathFileContents[k] = v
+    })
+
+    await Promise.all(Object.entries(fixedPathFileContents).map(writeFile))
   }
 
   return fileContents

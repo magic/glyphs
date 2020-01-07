@@ -8,12 +8,12 @@ export const getOptions = options => {
   let { name, output, cssDir, jsDir, fontDir, webRoot } = options
 
   options.dist = {
-    css: path.join(output, `${name}.css`),
-    html: path.join(output, `${name}-preview.html`),
-    js: path.join(output, `${name}-lib.mjs`),
-    magicCss: path.join(output, `${name}-style.mjs`),
-    magicView: path.join(output, `${name}.mjs`),
-    modules: path.join(output, `${name}.mjs`),
+    css: `${name}.css`,
+    html: `${name}-preview.html`,
+    js: `${name}-lib.mjs`,
+    magicCss: `${name}-style.mjs`,
+    magicView: `${name}.mjs`,
+    modules: `${name}.mjs`,
   }
 
   if (!webRoot.endsWith('/')) {

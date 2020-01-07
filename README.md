@@ -92,11 +92,11 @@ const results = glyphs()
 ```
 
 #### libraries used to build font files:
-[svgicons2svgfont](https://www.npmjs.com/package/svgicons2svgfont)
-[svg2ttf](https://www.npmjs.com/package/svg2ttf)
-[ttf2eot](https://www.npmjs.com/package/ttf2eot)
-[ttf2woff](https://www.npmjs.com/package/ttf2woff)
-[ttf2woff2](https://www.npmjs.com/package/ttf2woff2)
+* [svgicons2svgfont](https://www.npmjs.com/package/svgicons2svgfont)
+* [svg2ttf](https://www.npmjs.com/package/svg2ttf)
+* [ttf2eot](https://www.npmjs.com/package/ttf2eot)
+* [ttf2woff](https://www.npmjs.com/package/ttf2woff)
+* [ttf2woff2](https://www.npmjs.com/package/ttf2woff2)
 
 #### changelog
 

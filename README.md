@@ -75,6 +75,7 @@ const options = {
   noJs: false,         // do not generate javascript file
   noPreview: false,    // do not generate preview
   noModules: false,    // do not generate @magic-module file
+  noWrite: false,      // do not write any files
 
   // default options for svg <> font generators
   ascent: undefined,

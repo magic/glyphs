@@ -45,10 +45,3 @@ export const getGlyph = options => async (srcPath, index) => {
   return glyph
 }
 
-export const getGlyphs = async (files, options) => {
-  const glyphPromises = files.sort((a, b) => (a > b ? 1 : -1)).map(getGlyph(options))
-
-  const glyphs = await Promise.all(glyphPromises)
-
-  return glyphs
-}

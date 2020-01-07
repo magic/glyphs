@@ -1,5 +1,6 @@
 export { findFiles } from './findFiles.mjs'
-export { getGlyphs } from './getGlyphs.mjs'
+export { getGlyph } from './getGlyph.mjs'
+export { getOptions } from './getOptions.mjs'
 export { glyphs2css } from './glyphs2css.mjs'
 export { glyphs2js } from './glyphs2js.mjs'
 export { glyphs2module } from './glyphs2module.mjs'

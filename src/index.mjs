@@ -1,99 +1,12 @@
-import path from 'path'
+import * as tasks from './tasks/index.mjs'
 
-import defaultOptions from './defaultOptions.mjs'
-
-import {
-  findFiles,
-  getGlyphs,
-  glyphs2svgFont,
-  glyphs2css,
-  glyphs2html,
-  glyphs2js,
-  glyphs2module,
-  hash,
-  svgFont2otherFonts,
-  writeFiles,
-} from './lib/index.mjs'
-
-const cwd = process.cwd()
-
-export const build = async (options = {}) => {
-  options = { ...defaultOptions, ...options }
-
-  let { name, output, cssDir, jsDir, fontDir, webRoot } = options
-
-  options.dist = {
-    css: path.join(output, `${name}.css`),
-    html: path.join(output, `${name}-preview.html`),
-    js: path.join(output, `${name}-lib.mjs`),
-    magicCss: path.join(output, `${name}-style.mjs`),
-    magicView: path.join(output, `${name}.mjs`),
-    modules: path.join(output, `${name}.mjs`),
-  }
-
-  if (!webRoot.endsWith('/')) {
-    webRoot += '/'
-  }
-  if (!webRoot.startsWith('/')) {
-    webRoot = `/${webRoot}`
-  }
-
-  let cssFileUrl = `${name}.css`
-  if (cssDir) {
-    cssFileUrl = `${cssDir}${cssFileUrl}`
-  }
-  cssFileUrl = `${webRoot}${cssFileUrl}`
-
-  let jsFileUrl = `${name}.js`
-  if (jsDir) {
-    jsFileUrl = `${jsDir}${jsFileUrl}`
-  }
-  jsFileUrl = `${webRoot}${jsFileUrl}`
-
-  let fontFileUrl = webRoot
-  if (fontDir) {
-    fontFileUrl += `${fontDir}/`
-  }
-
-  options.urls = {
-    css: cssFileUrl,
-    html: `${webRoot}${name}-preview.html`,
-    js: jsFileUrl,
-    font: fontFileUrl,
-  }
-
+export const build = async (opts = {}) => {
   try {
-    const files = await findFiles(options)
-    const glyphs = await getGlyphs(files, options)
-    const svg = await glyphs2svgFont(glyphs, options)
-    const fonts = svgFont2otherFonts(svg, options)
+    const { glyphs, options } = await tasks.prepare(opts)
 
-    const fileMark = hash(svg).slice(0, 8)
+    const contents = await tasks.build(glyphs, options)
 
-    options.fileMark = fileMark
-
-    const { css, magicCss } = await glyphs2css(glyphs, options)
-
-    const html = glyphs2html(glyphs, options)
-    const js = glyphs2js(glyphs)
-
-    const modules = glyphs2module(glyphs, options)
-
-    const contents = {
-      glyphs,
-      svg,
-      fonts,
-      fileMark,
-      css,
-      magicCss,
-      html,
-      js,
-      modules,
-    }
-
-    const writtenFiles = await writeFiles(contents, options)
-
-    console.log(`font + css have been built with ${glyphs.length} svg-icons.`)
+    const writtenFiles = await tasks.write(contents, options)
 
     return writtenFiles
   } catch (error) {

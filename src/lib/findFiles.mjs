@@ -45,7 +45,7 @@ export const findFiles = async options => {
     }),
   )
 
-  return deep.flatten(files)
+  return deep.flatten(files).sort((a, b) => (a > b ? 1 : -1))
 }
 
 export default findFiles

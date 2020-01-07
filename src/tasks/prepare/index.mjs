@@ -2,7 +2,9 @@ import defaultMetadataProvider from 'svgicons2svgfont/src/metadata.js'
 import fs from '@magic/fs'
 import log from '@magic/log'
 
-import { findFiles, getGlyph, getOptions } from '../../lib/index.mjs'
+import { findFiles } from './findFiles.mjs'
+import { getGlyph } from './getGlyph.mjs'
+import { getOptions } from './getOptions.mjs'
 
 export const prepare = async (options = {}) => {
   options = getOptions(options)

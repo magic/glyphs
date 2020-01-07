@@ -2,7 +2,7 @@ import path from 'path'
 import url from 'url'
 import css from '@magic/css'
 
-import cssTemplate from './templates/css.mjs'
+import cssTemplate from '../templates/css.mjs'
 import { stringifyObject } from './stringifyObject.mjs'
 
 export const glyphs2css = async (glyphs, options) => {

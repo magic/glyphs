@@ -1,5 +1,3 @@
-import path from 'path'
-
 import {
   glyphs2svgFont,
   glyphs2css,
@@ -8,7 +6,7 @@ import {
   glyphs2module,
   hash,
   svgFont2otherFonts,
-} from '../../lib/index.mjs'
+} from './lib/index.mjs'
 
 const cwd = process.cwd()
 

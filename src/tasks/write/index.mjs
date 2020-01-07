@@ -1,4 +1,4 @@
-import { writeFiles } from '../../lib/index.mjs'
+import { writeFiles } from './writeFiles.mjs'
 
 export const write = async (contents, options = {}) => {
   try {

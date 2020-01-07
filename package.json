@@ -14,7 +14,7 @@
     "test": "t"
   },
   "bin": {
-    "magic-glyphs": "src/bin/bin.mjs"
+    "magic-glyphs": "src/bin.mjs"
   },
   "files": [
     "src"
@@ -33,7 +33,6 @@
     "@magic/cli": "0.0.15",
     "@magic/css": "0.7.9",
     "@magic/deep": "0.1.2",
-    "@magic/format": "0.0.5",
     "@magic/fs": "0.0.2",
     "@magic/log": "0.1.3",
     "@magic/types": "0.1.7",
@@ -44,6 +43,7 @@
     "ttf2woff2-no-gyp": "2.0.5"
   },
   "devDependencies": {
+    "@magic/format": "0.0.5",
     "@magic/test": "0.1.29"
   }
 }

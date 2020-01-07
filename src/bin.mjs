@@ -36,7 +36,7 @@ const cliArgs = {
       '--cssDir': 'directory to write css file to',
       '--jsDir': 'directory to write js file to',
       '--minimal': 'only output minimal files, no preview, no js.',
-      '--no-write': 'only returned compiled files, do not write to disk.',
+      '--no-write': 'only return compiled files, do not write to disk.',
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-

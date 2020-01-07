@@ -102,8 +102,7 @@ const options = {
   verbose: false,
 }
 
-const results = glyphs()
-
+const results = glyphs(options)
 ```
 
 #### libraries used to build font files:

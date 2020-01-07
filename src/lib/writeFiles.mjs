@@ -59,7 +59,6 @@ export const writeFiles = async (result, options) => {
     })
 
   if (!noWrite) {
-    console.log('write')
     await Promise.all(Object.entries(fileContents).map(writeFile))
   }
 

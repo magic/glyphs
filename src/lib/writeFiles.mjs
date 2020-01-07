@@ -26,6 +26,7 @@ export const writeFiles = async (result, options) => {
     noJs,
     noPreview,
     noModules,
+    noWrite,
   } = options
 
   const fileContents = {}
@@ -57,9 +58,12 @@ export const writeFiles = async (result, options) => {
       fileContents[destFilename] = data
     })
 
-  await Promise.all(Object.entries(fileContents).map(writeFile))
+  if (!noWrite) {
+    console.log('write')
+    await Promise.all(Object.entries(fileContents).map(writeFile))
+  }
 
-  return result
+  return fileContents
 }
 
 export default writeFiles

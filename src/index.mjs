@@ -91,9 +91,11 @@ export const build = async (options = {}) => {
       modules,
     }
 
-    await writeFiles(contents, options)
+    const writtenFiles = await writeFiles(contents, options)
 
     console.log(`font + css have been built with ${glyphs.length} svg-icons.`)
+
+    return writtenFiles
   } catch (error) {
     throw error
   }

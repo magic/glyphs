@@ -24,15 +24,18 @@ npm install --save-dev --save-exact @magic/glyphs
 ```
 
 ## usage
-after installing globally, magic-glyphs will be available as an executable on the PATH.
+after installing globally, `magic-glyphs` will be available as an executable on the PATH.
 
-if installed as app dependency, magic-glyphs will be available in package.json npm run scripts,
-as well as node_modules/.bin/magic-glyphs.
+if installed as app dependency, `magic-glyphs`
+will be available in package.json npm run scripts,
+and installed in node_modules/.bin/magic-glyphs.
 
 ### cli
 read all svg files in src,
 
-then write js, css, html, svg, ttf, woff, woff2 and eot files to dist.
+then write svg, ttf, woff, woff2, and eot,<br>
+js, css, html, @magic/css, and @magic/modules
+files to dist.
 
 ```bash
 magic-glyphs --dir src --out dist --name fontname --cssPrefix fn-

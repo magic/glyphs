@@ -44,4 +44,3 @@ export const getGlyph = options => async (srcPath, index) => {
 
   return glyph
 }
-

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import cli from '@magic/cli/src/index.mjs'
+import cli from '@magic/cli'
 import log from '@magic/log'
 
 import build from './index.mjs'
@@ -19,7 +19,10 @@ const cliArgs = {
     ['--minimal', '--min', '-m'],
     ['--no-write', '--noWrite'],
   ],
-  commands: ['build'],
+  required: [
+    '--dir',
+    '--output',
+  ],
   help: {
     name: 'magic-glyphs',
     header: 'generate webfont files from svg.',
@@ -40,7 +43,7 @@ const cliArgs = {
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-
-magic-glyphs --in ./src --out ./dist --name my-cool-font --cssPrefix mcf-
+magic-glyphs --in src --out dist --name my-cool-font --cssPrefix mcf-
 `,
   },
   default: {

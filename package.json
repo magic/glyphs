@@ -44,6 +44,6 @@
     "ttf2woff2-no-gyp": "2.0.5"
   },
   "devDependencies": {
-    "@magic/test": "0.1.28"
+    "@magic/test": "0.1.29"
   }
 }

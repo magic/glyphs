@@ -17,7 +17,7 @@ takes a directory of svgs and builds
 ## install
 ```bash
 // globally installed cli
-npm install - @magic/glyphs
+npm install -g @magic/glyphs
 
 // locally in your app
 npm install --save-dev --save-exact @magic/glyphs

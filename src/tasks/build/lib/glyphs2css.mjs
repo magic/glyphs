@@ -13,7 +13,7 @@ export const glyphs2css = async (glyphs, options) => {
   const style = await css(magicCss)
 
   const result = {
-    magicCss: stringifyObject(magicCss),
+    magicCss: `export const style = ${stringifyObject(magicCss)}`,
     css: style.css,
   }
 

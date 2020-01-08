@@ -66,7 +66,11 @@ const run = async () => {
   const writtenFiles = await build(args)
 
   if (is.error(writtenFiles)) {
-    throw writtenFiles
+    if (writtenFiles.code === 'ENOENT') {
+      log.error('ENOENT', writtenFiles.message.replace('ENOENT: ', ''))
+    } else {
+      throw writtenFiles
+    }
   }
 }
 

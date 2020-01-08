@@ -3,11 +3,16 @@ import path from 'path'
 import deep from '@magic/deep'
 import fs from '@magic/fs'
 import log from '@magic/log'
+import is from '@magic/types'
 
 const cwd = process.cwd()
 
 export const findFiles = async options => {
   let { dir } = options
+
+  if (is.string(dir)) {
+    dir = [dir]
+  }
 
   const files = await Promise.all(
     dir.map(async dir => {
@@ -22,10 +27,6 @@ export const findFiles = async options => {
           process.exit()
         }
       } catch (e) {
-        if (e.code === 'ENOENT') {
-          log.error('ENOENT', `${dir} does not exist.`)
-          process.exit()
-        }
         throw e
       }
 

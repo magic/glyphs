@@ -18,6 +18,7 @@ const cliArgs = {
     ['--jsDir', '-j'],
     ['--minimal', '--min', '-m'],
     ['--no-write', '--noWrite'],
+    ['--glyph-height', '--gh', '--height'],
   ],
   required: [
     '--dir',
@@ -25,7 +26,7 @@ const cliArgs = {
   ],
   help: {
     name: 'magic-glyphs',
-    header: 'generate webfont files from svg.',
+    header: 'generate webfont files from a directory of svgs.',
     commands: {
       build: 'build the font files',
     },
@@ -38,8 +39,9 @@ const cliArgs = {
       '--fontDir': 'directory to write font file to',
       '--cssDir': 'directory to write css file to',
       '--jsDir': 'directory to write js file to',
-      '--minimal': 'only output minimal files, no preview, no js.',
-      '--no-write': 'only return compiled files, do not write to disk.',
+      '--minimal': 'only output minimal files, no preview, no js',
+      '--no-write': 'only return compiled files, do not write to disk',
+      '--glyph-height': 'height of a single svg glyph in the font directory',
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-
@@ -49,25 +51,16 @@ magic-glyphs --in src --out dist --name my-cool-font --cssPrefix mcf-
   default: {
     '--name': 'magic-icons',
     '--cssPrefix': 'mi',
+    '--glyph-height': 1000,
   },
+  single: [
+    '--name',
+    '--output',
+  ],
 }
 
 const run = async () => {
   const { args } = cli(cliArgs)
-
-  if (!args.dir) {
-    log.error('--dir is required')
-    process.exit()
-  }
-
-  if (!args.output) {
-    log.error('--output is required')
-    process.exit()
-  } else {
-    args.output = args.output[0]
-  }
-
-  args.name = args.name[0]
 
   await build(args)
 }

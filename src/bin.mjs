@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import cli from '@magic/cli'
+import is from '@magic/types'
 import log from '@magic/log'
 
 import build from './index.mjs'
@@ -62,7 +63,11 @@ magic-glyphs --in src --out dist --name my-cool-font --cssPrefix mcf-
 const run = async () => {
   const { args } = cli(cliArgs)
 
-  await build(args)
+  const writtenFiles = await build(args)
+
+  if (is.error(writtenFiles)) {
+    throw writtenFiles
+  }
 }
 
 run()

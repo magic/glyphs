@@ -28,9 +28,6 @@ const cliArgs = {
   help: {
     name: 'magic-glyphs',
     header: 'generate webfont files from a directory of svgs.',
-    commands: {
-      build: 'build the font files',
-    },
     options: {
       '--dir': 'directory with svg files',
       '--output': 'directory to output files to',

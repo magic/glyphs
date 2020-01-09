@@ -21,10 +21,7 @@ const cliArgs = {
     ['--no-write', '--noWrite'],
     ['--glyph-height', '--gh', '--height'],
   ],
-  required: [
-    '--dir',
-    '--output',
-  ],
+  required: ['--dir', '--output'],
   help: {
     name: 'magic-glyphs',
     header: 'generate webfont files from a directory of svgs.',
@@ -51,10 +48,7 @@ magic-glyphs --in src --out dist --name my-cool-font --cssPrefix mcf
     '--cssPrefix': 'mi',
     '--glyph-height': 1000,
   },
-  single: [
-    '--name',
-    '--output',
-  ],
+  single: ['--name', '--output'],
 }
 
 const run = async () => {

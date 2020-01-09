@@ -6,6 +6,10 @@ import log from '@magic/log'
 
 import * as tasks from './tasks/index.mjs'
 
+import { resize as res } from './resize.mjs'
+
+export const resize = res
+
 export const build = async (opts = {}) => {
   if (is.string(opts.dir)) {
     opts.dir = [opts.dir]

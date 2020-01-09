@@ -14,7 +14,8 @@
     "test": "t"
   },
   "bin": {
-    "magic-glyphs": "src/bin.mjs"
+    "magic-glyphs": "src/bin/build-font.mjs",
+    "magic-glyphs-resize": "src/bin/glyph-resize.mjs"
   },
   "files": [
     "src"

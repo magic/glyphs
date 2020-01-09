@@ -4,7 +4,7 @@ import cli from '@magic/cli'
 import is from '@magic/types'
 import log from '@magic/log'
 
-import build from './index.mjs'
+import build from '../index.mjs'
 
 const cliArgs = {
   options: [
@@ -46,7 +46,7 @@ const cliArgs = {
     },
     example: `
 build a font from src to dist, calling it my-cool-font and css prefixing with mcf-
-magic-glyphs --in src --out dist --name my-cool-font --cssPrefix mcf-
+magic-glyphs --in src --out dist --name my-cool-font --cssPrefix mcf
 `,
   },
   default: {

@@ -1,4 +1,6 @@
 import { mapSvgAttrs } from './mapSvgAttrs.mjs'
+import { parsePolygonAttr } from './parsePolygonAttr.mjs'
+import { parsePathAttr } from './parsePathAttr.mjs'
 
 export const parseChildNode = opts => svg => {
   const meta = mapSvgAttrs(svg.attrs)
@@ -11,20 +13,12 @@ export const parseChildNode = opts => svg => {
 
   svg.childNodes = svg.childNodes.map(child => {
     if (child.nodeName === 'polygon') {
-      child.attrs = child.attrs.map(attr => {
-        if (attr.name === 'points') {
-          attr.value = attr.value
-            .split(' ')
-            .map(a => Math.round(a * ratio))
-            .join(' ')
-        }
-
-        return attr
-      })
+      child.attrs = child.attrs.map(parsePolygonAttr)
     }
 
     if (child.nodeName === 'path') {
-      console.log(child)
+      child.attrs = child.attrs.map(parsePathAttr)
+
     }
 
     return child

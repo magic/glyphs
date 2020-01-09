@@ -54,7 +54,7 @@ const run = async () => {
   const outFile = args.output
 
   await fs.writeFile(outFile, resizedFile)
-  log.success('svg resize', `${args.file} has been resized to ${args.glyphHeight}`)
+  log.success('svg resize', `${args.file} has been resized to ${args.glyphHeight}px height`)
 }
 
 run()

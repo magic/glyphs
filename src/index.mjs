@@ -18,13 +18,15 @@ export const build = async (opts = {}) => {
   try {
     let numDirs = opts.dir.length
 
-    await Promise.all(opts.dir.map(async dir => {
-      if (!path.isAbsolute(dir)) {
-        dir = path.join(process.cwd(), dir)
-      }
+    await Promise.all(
+      opts.dir.map(async dir => {
+        if (!path.isAbsolute(dir)) {
+          dir = path.join(process.cwd(), dir)
+        }
 
-      await fs.stat(dir)
-    }))
+        await fs.stat(dir)
+      }),
+    )
 
     const { glyphs, options } = await tasks.prepare(opts)
 

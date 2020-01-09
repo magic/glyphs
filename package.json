@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "t",
-    "build": "src/bin.mjs build --dir svg --out dist --name magic-icons --cssPrefix mi",
+    "build": "src/bin/build-font.mjs --dir svg --out dist --name magic-icons --cssPrefix mi",
+    "resize": "src/bin/resize.mjs --dir svg --out dist --name magic-icons --cssPrefix mi",
     "format": "f -w --exclude dist docs",
     "test": "t"
   },

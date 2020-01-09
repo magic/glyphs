@@ -1,4 +1,4 @@
-{
+export const style = {
   '@font-face': {
     'fontFamily': 'magic-icons',
     'fontDir': '/',

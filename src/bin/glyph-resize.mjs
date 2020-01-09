@@ -3,6 +3,7 @@
 import cli from '@magic/cli'
 import is from '@magic/types'
 import log from '@magic/log'
+import fs from '@magic/fs'
 
 import resize from '../resize.mjs'
 
@@ -13,10 +14,7 @@ const cliArgs = {
     ['--output', '--out', '-o'],
     ['--glyph-height', '--gh', '--height'],
   ],
-  required: [
-    '--file',
-    '--output',
-  ],
+  required: ['--file', '--output'],
   help: {
     name: 'magic-glyphs-resize',
     header: 'resize a svg.',
@@ -36,16 +34,27 @@ magic-glyphs-resize --in src/svg.svg --out dist/svg.svg --glyph-height 32
   default: {
     '--glyph-height': 1000,
   },
-  single: [
-    '--file',
-    '--output',
-  ],
+  single: ['--file', '--output', '--glyph-height'],
 }
 
 const run = async () => {
   const { args } = cli(cliArgs)
 
-  console.log({ args })
+  const resizedFile = await resize(args)
+
+  if (is.error(resizedFile)) {
+    if (resizedFile.code === 'ENOENT') {
+      log.error(resizedFile.code, resizedFile.message)
+      process.exit()
+    }
+
+    throw resizedFile
+  }
+
+  const outFile = args.output
+
+  await fs.writeFile(outFile, resizedFile)
+  log.success('svg resize', `${args.file} has been resized to ${args.glyphHeight}`)
 }
 
 run()

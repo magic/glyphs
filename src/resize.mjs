@@ -1,25 +1,21 @@
-import path from 'path'
-
-import fs from '@magic/fs'
-import is from '@magic/types'
 import log from '@magic/log'
+import is from '@magic/types'
 
-import parse5 from 'parse5'
+import * as tasks from './tasks/resize/index.mjs'
 
-import * as tasks from './tasks/index.mjs'
+export const resize = async args => {
+  const resized = await tasks.build(args)
 
-const cwd = process.cwd()
+  if (is.error(resized)) {
+    if (resized.code === 'ENOENT') {
+      log.error(resized.code, resized.message)
+      process.exit()
+    }
 
-export const resize = async (opts = {}) => {
-  if (!path.isAbsolute(opts.file)) {
-    opts.file = path.join(cwd, opts.file)
+    throw resized
   }
 
-  const content = await fs.readFile(opts.file, 'utf8')
-
-  const resized = tasks.parse(content, opts)
-
-  return resized
+  await tasks.write({ resized, args })
 }
 
 export default resize

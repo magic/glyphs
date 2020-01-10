@@ -6,7 +6,7 @@ import { findFiles } from './findFiles.mjs'
 import { getGlyph } from './getGlyph.mjs'
 import { getOptions } from './getOptions.mjs'
 
-export const prepare = async (options = {}) => {
+export const parse = async (options = {}) => {
   options = getOptions(options)
 
   const files = await findFiles(options)

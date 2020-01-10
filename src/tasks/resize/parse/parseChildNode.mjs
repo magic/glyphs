@@ -13,12 +13,11 @@ export const parseChildNode = opts => svg => {
 
   svg.childNodes = svg.childNodes.map(child => {
     if (child.nodeName === 'polygon') {
-      child.attrs = child.attrs.map(parsePolygonAttr)
+      child.attrs = child.attrs.map(parsePolygonAttr({ height: opts.glyphHeight, ratio }))
     }
 
     if (child.nodeName === 'path') {
-      child.attrs = child.attrs.map(parsePathAttr)
-
+      child.attrs = child.attrs.map(parsePathAttr({ height: opts.glyphHeight, ratio }))
     }
 
     return child
@@ -30,7 +29,6 @@ export const parseChildNode = opts => svg => {
 
     const height = Math.round(meta.height * ratio)
     const width = Math.round(meta.width * ratio)
-
 
     const viewBox = `${x} ${y} ${width} ${height}`
 

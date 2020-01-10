@@ -1,21 +1,9 @@
+import { writeFile } from './writeFile.mjs'
 import path from 'path'
-import fs from '@magic/fs'
 
 const cwd = process.cwd()
 
-export const writeFile = async ([file, data]) => {
-  const dir = path.dirname(file)
-
-  try {
-    await fs.mkdirp(dir)
-
-    await fs.writeFile(file, data)
-  } catch (e) {
-    throw e
-  }
-}
-
-export const writeFiles = async (result, options) => {
+export const write = async (result, options) => {
   const {
     name,
     fontDir,
@@ -74,5 +62,3 @@ export const writeFiles = async (result, options) => {
 
   return fileContents
 }
-
-export default writeFiles

@@ -1,6 +1,6 @@
 import path from 'path'
 
-import defaultOptions from '../../defaultOptions.mjs'
+import defaultOptions from '../../../defaultOptions.mjs'
 
 export const getOptions = options => {
   options = { ...defaultOptions, ...options }

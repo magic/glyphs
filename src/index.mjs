@@ -4,7 +4,7 @@ import fs from '@magic/fs'
 import is from '@magic/types'
 import log from '@magic/log'
 
-import * as tasks from './tasks/index.mjs'
+import * as tasks from './tasks/bundle/index.mjs'
 
 import { resize as res } from './resize.mjs'
 
@@ -28,7 +28,7 @@ export const build = async (opts = {}) => {
       }),
     )
 
-    const { glyphs, options } = await tasks.prepare(opts)
+    const { glyphs, options } = await tasks.parse(opts)
 
     const contents = await tasks.build(glyphs, options)
 

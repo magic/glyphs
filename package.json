@@ -46,6 +46,6 @@
   },
   "devDependencies": {
     "@magic/format": "0.0.6",
-    "@magic/test": "0.1.29"
+    "@magic/test": "0.1.31"
   }
 }

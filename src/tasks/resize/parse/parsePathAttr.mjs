@@ -6,9 +6,9 @@ const commandRegex = /([astvzqmhlc])([^astvzqmhlc]*)/gi
 
 const numberRegex = /-?[0-9]*\.?[0-9]+(?:e[-+]?\d+)?/gi
 
-const parseValues = (args, ratio) => {
+const parseValues = args => {
   const numbers = args.match(numberRegex)
-  return numbers ? numbers.map(Number).map(num => num * ratio) : []
+  return numbers ? numbers.map(Number) : []
 }
 
 export const parsePathValue = (path, ratio) => {
@@ -49,15 +49,20 @@ export const parsePathAttr = ({ height, ratio }) => attr => {
         const [cmd, ...args] = v
         const argString = args
           .map((arg, i) => {
-            if (!is.integer(arg)) {
-              let fixer = 1
-              const absArg = Math.abs(arg)
-              if (height >= 100) {
-                arg = Math.round(arg)
-              } else {
-		arg = arg.toFixed(1)
+	    if (cmd === 'a' || cmd === 'A') {
+	      if (i >= 2 && i <= 4) {
+		console.log('arg')
+		return ` ${arg}`
 	      }
-            }
+	    }
+
+            let fixer = 1
+            const absArg = Math.abs(arg)
+            if (height >= 100) {
+              arg = Math.round(arg * ratio)
+            } else {
+	      arg = (arg * ratio).toFixed(1)
+	    }
 
             if (arg >= 0 && i > 0) {
               return ` ${arg}`

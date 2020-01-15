@@ -10,7 +10,8 @@
   "scripts": {
     "start": "t",
     "build": "src/bin/build-font.mjs --dir svg --out dist --name magic-icons --cssPrefix mi",
-    "resize": "src/bin/glyph-resize.mjs --file svg/bookmark.svg --out svg/bookmark-resized.svg --glyph-height 32",
+    "resize:file": "src/bin/glyph-resize.mjs --file svg/calendar.svg --out svg --glyph-height 1000",
+    "resize:dir": "src/bin/glyph-resize.mjs --file svg --out svg --glyph-height 1000",
     "format": "f -w --exclude dist docs",
     "test": "t"
   },

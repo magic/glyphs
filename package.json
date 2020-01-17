@@ -34,7 +34,7 @@
   "main": "src/index.mjs",
   "dependencies": {
     "@magic/cases": "0.0.2",
-    "@magic/cli": "0.0.17",
+    "@magic/cli": "0.0.18",
     "@magic/css": "0.7.9",
     "@magic/deep": "0.1.2",
     "@magic/fs": "0.0.2",

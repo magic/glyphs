@@ -1,9 +1,8 @@
 @font-face { font-family: "magic-icons"; font-style: normal; font-weight: normal; src: url('/magic-icons.eot'); src: url('/magic-icons.eot#iefix') format('embedded-opentype'), url('/magic-icons.ttf') format('truetype'), url('/magic-icons.woff') format('woff'), url('/magic-icons.woff2') format('woff2'), url('/magic-icons.svg#magic-icons') format('svg'); }
  [class^="mi"], [class*="mi"] { font-family: magic-icons; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-style: normal; }
- .mi-bookmark::before { content: "\ea01"; }
- .mi-calendar::before { content: "\ea02"; }
- .mi-camera::before { content: "\ea03"; }
- .mi-chat::before { content: "\ea04"; }
- .mi-check::before { content: "\ea05"; }
- .mi-success::before { content: "\ea06"; }
- .mi-warning::before { content: "\ea07"; }
+ .mi-calendar::before { content: "\ea01"; }
+ .mi-camera::before { content: "\ea02"; }
+ .mi-chat::before { content: "\ea03"; }
+ .mi-check::before { content: "\ea04"; }
+ .mi-success::before { content: "\ea05"; }
+ .mi-warning::before { content: "\ea06"; }

@@ -11,25 +11,22 @@ export const style = {
     '-mozOsxFontSmoothing': 'grayscale',
     'fontStyle': 'normal'
   },
-  '.mi-bookmark::before': {
+  '.mi-calendar::before': {
     'content': '"\ea01"'
   },
-  '.mi-calendar::before': {
+  '.mi-camera::before': {
     'content': '"\ea02"'
   },
-  '.mi-camera::before': {
+  '.mi-chat::before': {
     'content': '"\ea03"'
   },
-  '.mi-chat::before': {
+  '.mi-check::before': {
     'content': '"\ea04"'
   },
-  '.mi-check::before': {
+  '.mi-success::before': {
     'content': '"\ea05"'
   },
-  '.mi-success::before': {
-    'content': '"\ea06"'
-  },
   '.mi-warning::before': {
-    'content': '"\ea07"'
+    'content': '"\ea06"'
   }
 }

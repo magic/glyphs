@@ -40,7 +40,7 @@
     "@magic/fs": "0.0.5",
     "@magic/log": "0.1.4",
     "@magic/types": "0.1.11",
-    "parse5": "5.1.1",
+    "parse5": "6.0.0",
     "svg2ttf": "4.3.0",
     "svgicons2svgfont": "github:jaeh/svgicons2svgfont",
     "ttf2eot": "2.0.0",
@@ -49,6 +49,6 @@
   },
   "devDependencies": {
     "@magic/format": "0.0.8",
-    "@magic/test": "0.1.41"
+    "@magic/test": "0.1.42"
   }
 }

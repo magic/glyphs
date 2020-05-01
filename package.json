@@ -13,7 +13,9 @@
     "resize:file": "src/bin/glyph-resize.mjs --file svg/calendar.svg --out svg --glyph-height 1000",
     "resize:dir": "src/bin/glyph-resize.mjs --file svg --out svg --glyph-height 1000",
     "format": "f -w --exclude dist docs",
-    "test": "t"
+    "test": "t",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {
     "magic-glyphs": "src/bin/build-font.mjs",
@@ -45,10 +47,12 @@
     "svgicons2svgfont": "github:jaeh/svgicons2svgfont",
     "ttf2eot": "2.0.0",
     "ttf2woff": "2.0.1",
-    "ttf2woff2-no-gyp": "2.0.5"
+    "ttf2woff2-no-gyp": "2.0.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@magic/format": "0.0.10",
     "@magic/test": "0.1.44"
-  }
+  },
+  "snyk": true
 }

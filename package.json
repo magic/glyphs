@@ -41,7 +41,7 @@
     "@magic/log": "0.1.5",
     "@magic/types": "0.1.12",
     "parse5": "6.0.0",
-    "svg2ttf": "4.3.0",
+    "svg2ttf": "5.0.0",
     "svgicons2svgfont": "github:jaeh/svgicons2svgfont",
     "ttf2eot": "2.0.0",
     "ttf2woff": "2.0.1",

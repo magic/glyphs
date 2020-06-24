@@ -33,6 +33,7 @@
   ],
   "main": "src/index.mjs",
   "dependencies": {
+    "@magic-modules/no-spy": "0.0.1",
     "@magic/cases": "0.0.3",
     "@magic/cli": "0.0.28",
     "@magic/css": "0.7.16",

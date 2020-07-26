@@ -40,7 +40,7 @@
     "@magic/fs": "0.0.6",
     "@magic/log": "0.1.5",
     "@magic/types": "0.1.13",
-    "parse5": "6.0.0",
+    "parse5": "6.0.1",
     "svg2ttf": "5.0.0",
     "svgicons2svgfont": "github:jaeh/svgicons2svgfont",
     "ttf2eot": "2.0.0",

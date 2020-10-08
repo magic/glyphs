@@ -35,9 +35,9 @@
   "dependencies": {
     "@magic/cases": "0.0.3",
     "@magic/cli": "0.0.29",
-    "@magic/css": "0.7.21",
+    "@magic/css": "0.7.22",
     "@magic/deep": "0.1.4",
-    "@magic/fs": "0.0.7",
+    "@magic/fs": "0.0.8",
     "@magic/log": "0.1.6",
     "@magic/types": "0.1.13",
     "parse5": "6.0.1",
@@ -48,7 +48,7 @@
     "ttf2woff2-no-gyp": "2.0.5"
   },
   "devDependencies": {
-    "@magic/format": "0.0.16",
-    "@magic/test": "0.1.55"
+    "@magic/format": "0.0.17",
+    "@magic/test": "0.1.56"
   }
 }

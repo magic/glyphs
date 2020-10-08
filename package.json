@@ -37,7 +37,7 @@
     "@magic/cli": "0.0.29",
     "@magic/css": "0.7.21",
     "@magic/deep": "0.1.4",
-    "@magic/fs": "0.0.7",
+    "@magic/fs": "0.0.8",
     "@magic/log": "0.1.6",
     "@magic/types": "0.1.13",
     "parse5": "6.0.1",

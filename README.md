@@ -1,5 +1,7 @@
 ## @magic/glyphs
 
+### UNFINISHED, WIP.
+
 takes a directory of svgs and builds
 * iconfont files (ttf, woff2, woff, eot, svg),
 * a [@magic/css](https://github.com/magic/css) file,

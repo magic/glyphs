@@ -33,22 +33,22 @@
   ],
   "main": "src/index.mjs",
   "dependencies": {
-    "@magic/cases": "0.0.3",
-    "@magic/cli": "0.0.30",
-    "@magic/css": "0.7.27",
-    "@magic/deep": "0.1.4",
-    "@magic/fs": "0.0.9",
-    "@magic/log": "0.1.7",
-    "@magic/types": "0.1.13",
+    "@magic/cases": "0.0.5",
+    "@magic/cli": "0.0.34",
+    "@magic/css": "0.7.38",
+    "@magic/deep": "0.1.7",
+    "@magic/fs": "0.0.15",
+    "@magic/log": "0.1.10",
+    "@magic/types": "0.1.16",
     "parse5": "6.0.1",
-    "svg2ttf": "5.0.0",
+    "svg2ttf": "6.0.3",
     "svgicons2svgfont": "github:jaeh/svgicons2svgfont",
-    "ttf2eot": "2.0.0",
-    "ttf2woff": "2.0.2",
+    "ttf2eot": "3.0.0",
+    "ttf2woff": "3.0.0",
     "ttf2woff2-no-gyp": "2.0.5"
   },
   "devDependencies": {
-    "@magic/format": "0.0.20",
-    "@magic/test": "0.1.59"
+    "@magic/format": "0.0.29",
+    "@magic/test": "0.1.74"
   }
 }
